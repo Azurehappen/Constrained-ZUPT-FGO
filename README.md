@@ -12,6 +12,19 @@ results/             # Error statistics and trajectory output
 requirements.txt     # Python dependencies
 ```
 
+## 📄 Citation
+
+If you are interested in this code, please cite our paper:
+```
+@inproceedings{hu2025constrained,
+  author    = {Yingjie Hu and Wang Hu},
+  title     = {Constrained Factor Graph Optimization for Robust Networked Pedestrian Inertial Navigation},
+  booktitle = {Proceedings of the IEEE/ION Position, Location and Navigation Symposium (PLANS)},
+  year      = {2025},
+  organization = {IEEE/ION}
+}
+```
+
 ## 📦 Requirements
 
 We recommend using a conda environment on **Ubuntu**. To set up:
