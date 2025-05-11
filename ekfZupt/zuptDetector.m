@@ -2,7 +2,7 @@ function [zuptStatus] = zuptDetector(imuMeas, initialGyroBias)
     %UNTITLED5 Summary of this function goes here
     %   imuMeas: 6 x Num
     %   initialGyroBias: 3 x 1
-    gyroMeas = imuMeas(4:6, :) + initialGyroBias;
+    gyroMeas = imuMeas(4:6, :) - initialGyroBias;
     accelMeas = imuMeas(1:3, :);
     latitude = 44.986656;
     altitude = -256;

@@ -50,15 +50,15 @@ function [] = ekf_function(posTrigger, stepTrigger, fileName)
     initialGyroBiasYFoot = 0.0077;
     initialGyroBiasZFoot = -0.001;
     initialGyroBiasFoot = [initialGyroBiasXFoot;
-                       initialGyroBiasYFoot;
-                       initialGyroBiasZFoot];
+                           initialGyroBiasYFoot;
+                           initialGyroBiasZFoot];
 
     initialGyroBiasXLeft = 0.005;
     initialGyroBiasYLeft = 0.003;
     initialGyroBiasZLeft = -0.003;
     initialGyroBiasLeft = [initialGyroBiasXLeft;
-                       initialGyroBiasYLeft;
-                       initialGyroBiasZLeft];
+                           initialGyroBiasYLeft;
+                           initialGyroBiasZLeft];
 
     imuMeasFoot = imuMeasDataFoot(ind3:ind3 + recordLen, :)';
     imuMeasLeft = imuMeasDataLeft(ind3:ind3 + recordLen, :)';
@@ -70,8 +70,8 @@ function [] = ekf_function(posTrigger, stepTrigger, fileName)
     posFoot = posFoot - posFootStart;
     posLeft = posLeft - posFootStart;
 
-    [zuptStatusFoot] = zuptDetector(imuMeasFoot, initialGyroBiasFoot);
-    [zuptStatusLeft] = zuptDetector(imuMeasLeft, initialGyroBiasLeft);
+    [zuptStatusFoot] = zuptDetector(imuMeasFoot, zeros(size(initialGyroBiasFoot)));
+    [zuptStatusLeft] = zuptDetector(imuMeasLeft, zeros(size(initialGyroBiasLeft)));
     imuMeasFootCopy = importIMUMeasFromGithub("../measData/imuMeasRight.csv");
     imuMeasLeftCopy = importIMUMeasFromGithub("../measData/imuMeasLeft.csv");
     positionMeas = importIMUMeasFromGithub("../measData/positionMeas.csv");
