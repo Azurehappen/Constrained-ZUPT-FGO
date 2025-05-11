@@ -14,7 +14,7 @@ requirements.txt     # Python dependencies
 
 ## 📄 Citation
 
-If you are interested in this code, please cite our paper:
+If you are interested in this work, please cite our paper:
 ```
 @inproceedings{hu2025constrained,
   author    = {Yingjie Hu and Wang Hu},
