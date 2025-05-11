@@ -1,16 +1,43 @@
 # Constrained-Zero-Velocity-FGO
 
-## Setup
-To use the Python scripts in this repository, several packages are needed. The following commands show examples that install the prerequisite packsge in a conda environment.
+This repository contains the implementation of a constrained Factor Graph Optimization (FGO)-based and Extended Kalman Filter (EKF)-based pedestrian navigation system. The project supports trajectory estimation using foot-mounted IMUs with kinematic constraints, including equality constraints of Zero-Velocity Updates (ZUPTs) and inequality constraints of inter-foot distance limits.
 
-1. Create a conda environment
+## 📁 Project Structure
+
 ```
-conda create --name zupt-gtsam python=3.9
-conda activate zupt-gtsam
+ekfZupt/             # MATLAB EKF implementation
+zeroVelFgo/          # Python FGO implementation
+figures/             # Experimental figures used in the paper
+results/             # Error statistics and trajectory output
+requirements.txt     # Python dependencies
 ```
 
-2. Install neccesary packages
+## 📦 Requirements
+
+We recommend using a conda environment on **Ubuntu**. To set up:
+
 ```
-conda install -c conda-forge boost=1.71 boost-cpp=1.71
+conda create -n fgo_nav python=3.9
+conda activate fgo_nav
 pip install -r requirements.txt
 ```
+
+**Note**: GTSAM is included in the `requirements.txt`.
+
+## 🚀 How to Run
+
+### EKF-Based Approach
+
+The EKF implementation is located in MATLAB. Run `generateEKFResults.m` for EKF results.
+
+
+### FGO-Based Approach
+
+The FGO approach is implemented in Python:
+
+```
+python runZuptFgo.py
+```
+
+By default, this script reads precomputed FGO results from saved `.csv` files. To rerun the optimization using GTSAM, set `read_zupt_xxx_from_csv = False` inside `runZuptFgo.py`.
+
