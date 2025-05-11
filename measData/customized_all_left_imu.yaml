@@ -1,0 +1,14 @@
+accelerometer_Xnoise_density: 0.00012
+accelerometer_Xrandom_walk: 0.005
+accelerometer_Ynoise_density: 0.00012
+accelerometer_Yrandom_walk: 0.005
+accelerometer_Znoise_density: 0.00012
+accelerometer_Zrandom_walk: 0.005
+gyroscope_Xnoise_density: 0.007
+gyroscope_Xrandom_walk: 0.05
+gyroscope_Ynoise_density: 0.007
+gyroscope_Yrandom_walk: 0.05
+gyroscope_Znoise_density: 0.007
+gyroscope_Zrandom_walk: 0.05
+update_rate: 60.0
+
